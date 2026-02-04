@@ -17,7 +17,7 @@ public class Transaction {
         this.paymentMethod = paymentMethod;
         this.amount = amount;
         this.description = description;
- 
+
     }
 
     @Override
@@ -61,10 +61,16 @@ public class Transaction {
     public String getDescription() {
         return description;
     }
+
     public String getTransactionId() {
         return transactionId;
     }
+
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public static int getTotalTransactions() {
+        return totalTransactions;
     }
 }

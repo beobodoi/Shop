@@ -5,9 +5,7 @@ public class BankTransfer extends PaymentMethod implements Payable, Refundable {
         return isBankHoliday;
     }
 
-    public static void setIsBankHoliday(boolean isBankHoliday) {
-        BankTransfer.isBankHoliday = isBankHoliday;
-    }
+   
     private String accountNumber;
     private String bankName;
     private final String routingNumber;
@@ -87,5 +85,8 @@ public class BankTransfer extends PaymentMethod implements Payable, Refundable {
     public void setBankName(String bankName) {
         this.bankName = bankName;
     }
-
+ @Override
+    public String toString() {
+        return "Id:" + getPaymentId() + "- OwnerName:" + getOwnerName() + "- BankName:" + bankName +"- Type:" + getPaymentType() + "- Card: N/A" + "- EX: N/A " + "- Balance :" + getBalance();
+    }
 }

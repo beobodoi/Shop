@@ -37,7 +37,10 @@ public class DigitalWallet extends PaymentMethod implements Payable {
         setBalance(getBalance() - amount);
         return true;
     }
-
+ @Override
+    public String toString() {
+        return "Id:" + getPaymentId() + "- OwnerName:" + getOwnerName() + "- Type:" + getPaymentType() + "- Card: N/A" + "- EX: N/A " + "- Balance :" + getBalance();
+    }
     @Override
     public String getPaymentDetails() {
         return "Email:" + email + "- PhoneNumber:" + phoneNumber;

@@ -7,7 +7,7 @@ public abstract class PaymentMethod {
     private static int paymentCount;
 
     public PaymentMethod(String ownerName, double balance) {
-        this.paymentId = String.format("PAY@03d", paymentCount);
+        this.paymentId = String.format("PAY%03d", paymentCount);
         this.ownerName = ownerName;
         this.balance = balance;
         paymentCount++;
@@ -25,6 +25,10 @@ public abstract class PaymentMethod {
         return ownerName;
     }
 
+    public static int getPaymentCount() {
+        return paymentCount;
+    }
+
     public void setOwnerName(String ownerName) {
         this.ownerName = ownerName;
     }
@@ -32,14 +36,17 @@ public abstract class PaymentMethod {
     public String getPaymentId() {
         return paymentId;
     }
+
     public abstract boolean validate();
+
     public abstract String getPaymentType();
-    public void displayBalance(){
+
+    public void displayBalance() {
         System.out.println("Current balance :" + balance);
     }
-    protected boolean hasSufficientFunds(double amount){
-        return balance >= paymentCount;
+
+    protected boolean hasSufficientFunds(double amount) {
+        return balance >= amount;
     }
 
-   
 }

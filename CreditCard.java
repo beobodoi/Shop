@@ -96,7 +96,7 @@ public class CreditCard extends PaymentMethod implements Payable, Refundable {
         String masked = cardNumber != null && cardNumber.length() >= 4
                 ? "xxxx-xxxx-xxxx-" + cardNumber.substring(cardNumber.length() - 4)
                 : "xxxx-xxxx-xxxxx-xxxxx";
-        return "Id:" + getPaymentId() + "-OwnerName:" + getOwnerName() + "-Type:" + getPaymentType() + "-Card:" + masked + "-ExpiryDate" + expiryDate + "-Balance" + getBalance();
+        return "Id:" + getPaymentId() + "-OwnerName:" + getOwnerName() + "-Type:" + getPaymentType() + "-Card:" + masked + "-ExpiryDate" + expiryDate + "-Balance:" + getBalance();
     }
 
 }
